@@ -1,0 +1,81 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Are Hucked</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      color: #00ff41;
+      font-family: "Courier New", monospace;
+      overflow: hidden;
+    }
+
+    .message {
+      text-align: center;
+      font-size: clamp(2rem, 8vw, 7rem);
+      font-weight: bold;
+      text-shadow:
+        0 0 10px #00ff41,
+        0 0 30px #00ff41,
+        0 0 60px #00ff41;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 100% {
+        transform: translate(0);
+      }
+
+      20% {
+        transform: translate(-3px, 3px);
+      }
+
+      40% {
+        transform: translate(3px, -3px);
+      }
+
+      60% {
+        transform: translate(-2px, -2px);
+      }
+
+      80% {
+        transform: translate(2px, 2px);
+      }
+    }
+
+    .scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 255, 65, 0.04) 4px
+      );
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="message">YOU ARE HUCKED</div>
+  <div class="scanlines"></div>
+
+</body>
+</html>
+```
